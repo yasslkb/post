@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading "> Posts! </div>
+        <div class="panel-body">
+
+            <form #f="ngForm" (ngSubmit)="onAddPost(f.value)">
+
+                <div class="form-group">
+
+                    <label class="control-label"> contenu:</label>
+                    <input required type="text" name="message" ngModel />
+                    <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Ajouter Post!</button>
+ 
+                </div>
+
+            </form>
+            <ul class="list-group">
+                <li *ngFor="let p of Posts" class="list-group-item">
+                    {{p.message}}
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
